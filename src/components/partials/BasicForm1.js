@@ -41,7 +41,7 @@ export class BasicForm1 extends Component {
 		}
 		if (formSubmitted & consent) {
 			message = (
-				<div>
+				<div className='form-submission'>
 					<p>First Name: {firstName}</p>
 					<p>Last Name: {lastName}</p>
 					<p>Gender: {gender}</p>
@@ -51,71 +51,81 @@ export class BasicForm1 extends Component {
 		}
 
 		return (
-			<div>
+			<>
 				<h2>BasicForm1</h2>
 				<form onSubmit={handleOnSubmit} className='form-container'>
-					<label htmlFor='firstName' className='form-item'>
-						<input
-							type='text'
-							id='firstName'
-							name='firstName'
-							placeholder='enter first name'
-							onChange={handleOnChange}
-							required
-						/>
-					</label>
-
-					<label htmlFor='lastName' className='form-item'>
-						<input
-							type='text'
-							id='lastName'
-							name='lastName'
-							placeholder='enter last name'
-							onChange={handleOnChange}
-							required
-						/>
-					</label>
-
-					<label htmlFor='male' className='form-item'>
-						<input
-							type='radio'
-							id='male'
-							checked={gender === 'male'}
-							name='gender'
-							value='male'
-							onChange={handleOnChange}
-						/>
-						Male
-					</label>
-
-					<label htmlFor='female' className='form-item'>
-						<input
-							type='radio'
-							id='female'
-							checked={gender === 'female'}
-							name='gender'
-							value='female'
-							onChange={handleOnChange}
-						/>
-						Female
-					</label>
-
-					<label htmlFor='consent' className='form-item'>
-						<input
-							type='checkbox'
-							id='consent'
-							name='consent'
-							checked={consent}
-							onChange={handleOnChange}
-						/>
-						Please consent
-					</label>
-
-					{consent ? <button>Submit</button> : <button disabled>Submit</button>}
+					<div className='form-item'>
+						<label htmlFor='firstName'>
+							<input
+								type='text'
+								id='firstName'
+								name='firstName'
+								placeholder='enter first name'
+								onChange={handleOnChange}
+								required
+							/>
+						</label>
+					</div>
+					<div className='form-item'>
+						<label htmlFor='lastName'>
+							<input
+								type='text'
+								id='lastName'
+								name='lastName'
+								placeholder='enter last name'
+								onChange={handleOnChange}
+								required
+							/>
+						</label>
+					</div>
+					<div className='form-item'>
+						<label htmlFor='male' className='form-item'>
+							<input
+								type='radio'
+								id='male'
+								checked={gender === 'male'}
+								name='gender'
+								value='male'
+								onChange={handleOnChange}
+							/>
+							Male
+						</label>
+					</div>
+					<div className='form-item'>
+						<label htmlFor='female'>
+							<input
+								type='radio'
+								id='female'
+								checked={gender === 'female'}
+								name='gender'
+								value='female'
+								onChange={handleOnChange}
+							/>
+							Female
+						</label>
+					</div>
+					<div className='form-item'>
+						<label htmlFor='consent'>
+							<input
+								type='checkbox'
+								id='consent'
+								name='consent'
+								checked={consent}
+								onChange={handleOnChange}
+							/>
+							Please consent
+						</label>
+					</div>
+					<div className='form-item'>
+						{consent ? (
+							<button>Submit</button>
+						) : (
+							<button disabled>Submit</button>
+						)}
+					</div>
 				</form>
-
 				{message}
-			</div>
+			</>
 		);
 	}
 }
