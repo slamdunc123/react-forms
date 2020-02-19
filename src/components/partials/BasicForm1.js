@@ -42,10 +42,18 @@ export class BasicForm1 extends Component {
 		if (formSubmitted & consent) {
 			message = (
 				<div className='form-submission'>
-					<p>First Name: {firstName}</p>
-					<p>Last Name: {lastName}</p>
-					<p>Gender: {gender}</p>
-					<p>Consent: Yes</p>
+					<p>
+						First Name: <b>{firstName}</b>
+					</p>
+					<p>
+						Last Name: <b>{lastName}</b>
+					</p>
+					<p>
+						Gender: <b>{gender}</b>
+					</p>
+					<p>
+						Consent: <b>yes</b>
+					</p>
 				</div>
 			);
 		}
@@ -55,31 +63,31 @@ export class BasicForm1 extends Component {
 				<h2>BasicForm1</h2>
 				<form onSubmit={handleOnSubmit} className='form-container'>
 					<div className='form-item'>
-						<label htmlFor='firstName'>
-							<input
-								type='text'
-								id='firstName'
-								name='firstName'
-								placeholder='enter first name'
-								onChange={handleOnChange}
-								required
-							/>
-						</label>
+						<label htmlFor='firstName'></label>
+						<input
+							className='text-input'
+							type='text'
+							id='firstName'
+							name='firstName'
+							placeholder='enter first name'
+							onChange={handleOnChange}
+							required
+						/>
 					</div>
 					<div className='form-item'>
-						<label htmlFor='lastName'>
-							<input
-								type='text'
-								id='lastName'
-								name='lastName'
-								placeholder='enter last name'
-								onChange={handleOnChange}
-								required
-							/>
-						</label>
+						<label htmlFor='lastName'></label>
+						<input
+							className='text-input'
+							type='text'
+							id='lastName'
+							name='lastName'
+							placeholder='enter last name'
+							onChange={handleOnChange}
+							required
+						/>
 					</div>
 					<div className='form-item'>
-						<label htmlFor='male' className='form-item'>
+						<label htmlFor='male'>
 							<input
 								type='radio'
 								id='male'
