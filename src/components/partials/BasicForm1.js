@@ -125,11 +125,7 @@ export class BasicForm1 extends Component {
 						</label>
 					</div>
 					<div className='form-item'>
-						{consent ? (
-							<button>Submit</button>
-						) : (
-							<button disabled>Submit</button>
-						)}
+						{consent ? <button>Submit</button> : <button disabled>Submit</button>}
 					</div>
 				</form>
 				{message}
