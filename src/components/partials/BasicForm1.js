@@ -12,8 +12,8 @@ export class BasicForm1 extends Component {
 
 	handleOnChange = e => {
 		// console.log('handleOnChange fired');
-		const target = e.target;
-		const value = target.type === 'checkbox' ? target.checked : target.value;
+		const value =
+			e.target.type === 'checkbox' ? e.target.checked : e.target.value;
 
 		this.setState({
 			[e.target.name]: value,
@@ -125,7 +125,11 @@ export class BasicForm1 extends Component {
 						</label>
 					</div>
 					<div className='form-item'>
-						{consent ? <button>Submit</button> : <button disabled>Submit</button>}
+						{consent ? (
+							<button>Submit</button>
+						) : (
+							<button disabled>Submit</button>
+						)}
 					</div>
 				</form>
 				{message}
