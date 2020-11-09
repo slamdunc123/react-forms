@@ -1,5 +1,7 @@
 import React from 'react';
-import './App.css';
+import Header from './components/layout/Header';
+import { BrowserRouter as Router } from 'react-router-dom';
+// import './App.css';
 
 // layout
 import Main from './components/layout/Main';
@@ -7,7 +9,10 @@ import Main from './components/layout/Main';
 function App() {
 	return (
 		<div className='App'>
-			<Main />
+			<Router>
+				<Header />
+				<Main />
+			</Router>
 		</div>
 	);
 }

@@ -12,7 +12,7 @@ const Forms = () => {
 	// setToggleForm(!toggleForm);
 	// };
 
-	const renderForm = formNum => {
+	const renderForm = (formNum) => {
 		switch (formNum) {
 			case 1:
 				setForm(<BasicForm1 />);
@@ -25,13 +25,13 @@ const Forms = () => {
 		}
 	};
 	return (
-		<>
+		<div>
 			{/* <button onClick={toggleSwitchForm}>Toggle Form</button>
 			{toggleForm ? <BasicForm1 /> : <BasicForm2 />} */}
 			<button onClick={() => renderForm(1)}>BasicForm1</button>
 			<button onClick={() => renderForm(2)}>BasicForm2</button>
 			{form}
-		</>
+		</div>
 	);
 };
 
